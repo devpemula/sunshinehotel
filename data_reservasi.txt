@@ -1,0 +1,5 @@
+{"name":"farhan","email":"2300018164@webmail.uad.ac.id","roomType":"double","checkinDate":"2024-07-30","checkoutDate":"2024-07-31"}
+{"name":"farhan","email":"2300018164@webmail.uad.ac.id","roomType":"suite","checkinDate":"2024-07-03","checkoutDate":"2024-07-03"}
+{"name":"Farhan Muhammad Iqbal","email":"2300018164@webmail.uad.ac.id","roomType":"single","checkinDate":"2024-07-03","checkoutDate":"2024-07-03"}
+{"name":"taulah","email":"fdsfdf@gfsd","roomType":"single","checkinDate":"2024-07-04","checkoutDate":"2024-07-02"}
+{"name":"kumar","email":"kumar89@gmail.com","roomType":"double","checkinDate":"2024-07-18","checkoutDate":"2024-07-20"}

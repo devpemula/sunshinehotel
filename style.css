@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playwrite+Australia+QLD&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.title{
+    font-family: 'Playwrite Australia QLD', cursive;
+    color: #ffa33e;
+    font-weight: 700;
+    font-size: x-large;
+    margin-bottom: -8px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.subtitle{
+    font-family: 'Playwrite Australia QLD', cursive;
+    font-weight: 500;
+    font-size: xx-large;
+    color: #ffa33e;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+
+.paragraf{
+    font-family: 'Poppins', cursive;
+    font-weight: 300;
+    font-size: medium;
+    color: black;
+    letter-spacing: 0.05rem;
+    text-justify: inter-cluster;
+    text-transform: uppercase;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    padding: 20pt 30pt;
+
+    position: fixed;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.logo h2{
+    border: 2pt;
+    border: white;
+    padding: 10px 15px;
+    font-size: large;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+}
+
+.navigate{
+    margin-left: auto;
+}
+
+.navigate ul{
+    display: flex;
+    gap: 26px;
+}
+
+.navigate ul li{
+    list-style: none;
+}
+
+.navigate ul li a{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: medium;
+    color: white;
+}
+
+header.sticky{
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.5s;
+    position: fixed;
+    padding: 20pt 50pt;
+    color: black;
+    z-index: 50;
+}
+header.sticky .navigate ul li a{
+    color: black;
+    font-size: large;
+}
+header.sticky .logo h2{
+    color: black;
+    border: black;
+    font-size: larger;
+}
+
+/* Home */
+
+#bg-home {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(https://travelersxc.com/wp-content/uploads/2018/03/Vacation-Villas-at-Fantasy-World-Kissimmee-FL-pool-area-2.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh
+}
+
+.bg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.container p{
+    color: white;
+    font-size: medium;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/*about us */
+
+#about{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.content-about, .content-img{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.content-img img{
+    width: 70%;
+    height: 50%;
+    border-radius: 16px;
+}
+
+    /* pesan */
+
+    #pesan{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+
+    .contentpesan{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 36px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bg-pesan{
+        width: 50%;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(https://www.amesbostonhotel.com/wp-content/uploads/2022/02/Desain-Kamar-Hotel-Bintang-5-Minimalis.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-size: 50%;
+        height: 100%
+    }
+
+    .container-form{
+        width: 100%;
+        display: flex;
+        margin-top: 16px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .content-form{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .content-form input, select{
+        border: 1px;
+        border-style: solid;
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    .container-form button{
+        border: 1px;
+        border-color: gray;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: skyblue;
+    }
+
+    .container-form button:hover{
+        background-color: blue;
+        color: white;
+        transition: 0.5s;
+    }
+
+#login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-login{
+    width: 50%;
+    height: 50%;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px;
+    border-color: black;
+}

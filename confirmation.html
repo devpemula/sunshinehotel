@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="confirmation">
+        <div class="content-confirmation">
+            <h2>Reservation Confirmation</h2>
+            <p id="confirmation-message"></p>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get("name");
+            const email = params.get("email");
+            const roomType = params.get("roomType");
+            const checkinDate = params.get("checkinDate");
+            const checkoutDate = params.get("checkoutDate");
+
+            const confirmationMessage = `
+                Name: ${name} <br>
+                Email: ${email} <br>
+                Room Type: ${roomType} <br>
+                Check-in Date: ${checkinDate} <br>
+                Check-out Date: ${checkoutDate}
+            `;
+
+            document.getElementById("confirmation-message").innerHTML = confirmationMessage;
+        });
+    </script>
+</body>
+</html>

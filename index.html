@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="head" id="header">
+        <div class="logo">
+            <h2>Sunshine Hotel</h2>
+        </div>
+        <nav class="navigate">
+            <ul>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#galeri">Galeri</a>
+                </li>
+                <li>
+                    <a href="#pesan">Pesan</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id='home'>
+        <div id="bg-home" class='bg' >
+          <div class="container" >
+
+          <h2 class='title' data-aos="fade-down" data-aos-once="true">Welcome to</h2>
+          <h4 class='subtitle' data-aos="fade-up" data-aos-once="true" data-aos-delay="500">The Sunshine Hotel</h4>
+          <p class='text-white text-sm' data-aos="flip-up" data-aos-delay="650">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, labore?</p>
+          </div>
+        </div>
+    </section>
+
+    <section id="about">
+      <div class="content-about">
+        <h2 class="title">Kenyamanan, Kemewahan, Keamanan</h2>
+        <p class="paragraf">The Sunshine menyediakan kamar dengan desain mewah yang nyaman dilihat. dengan privasi yang tetap terjaga</p>
+      </div>
+      <div class="content-img">
+        <img src="asset/bed.jfif" class="bed">
+      </div>
+    </section>
+
+        <section id="pesan">
+        <div class="contentpesan">
+            <h2>Pesan Kamar</h2>
+            <form class="container-form" action="updateAvailability.php" method="post" id="reservationForm">
+                <div class="content-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="content-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="content-form">
+                    <label for="roomType">Room Type:</label>
+                    <select id="roomType" name="roomType" required>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="suite">Suite</option>
+                    </select>
+                </div>
+                <div class="content-form">
+                    <label for="checkinDate">Check-in Date:</label>
+                    <input type="date" id="checkinDate" name="checkinDate" required>
+                </div>
+                <div class="content-form">
+                    <label for="checkoutDate">Check-out Date:</label>
+                    <input type="date" id="checkoutDate" name="checkoutDate" required>
+                </div>
+                <button type="submit">Reserve</button>
+            </form>
+        </div>
+        <div class="bg-pesan"></div>
+    </section>
+
+    <script>
+        window.addEventListener("scroll",()=>{
+            const header = document.getElementById("header")
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+        
+        document.getElementById("reservationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+        fetch('updateAvailability.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+        if (data.success) {
+            const params = new URLSearchParams();
+            params.append("name", formData.get("name"));
+            params.append("email", formData.get("email"));
+            params.append("roomType", formData.get("roomType"));
+            params.append("checkinDate", formData.get("checkinDate"));
+            params.append("checkoutDate", formData.get("checkoutDate"));
+
+            window.location.href = `confirmation.html?${params.toString()}`;
+        } else {
+            alert("Error: " + data.error);
+        }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"single":6,"double":13,"suite":14}
